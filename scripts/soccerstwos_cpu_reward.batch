@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# CPU-only SoccerTwos PPO training job (reward-shaping variant)
+
+#SBATCH --job-name=soccer_cpu_reward
+#SBATCH -N1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=12
+#SBATCH --mem=32G
+#SBATCH -t08:00:00
+#SBATCH --output=soccer_cpu_reward-%j.out
+
+set -euo pipefail
+
+REPO_DIR="/home/hice1/cxu371/scratch/drl-soccer-twos"
+PYTHON_BIN="/home/hice1/cxu371/scratch/scratch/conda-envs/soccertwos/bin/python"
+
+cd "$REPO_DIR"
+
+env -u PYTHONPATH -u PYTHONHOME "$PYTHON_BIN" train_ppo_cpu_reward.py \
+  --exp-name "PPO_reward_cpu_slurm" \
+  --num-workers 8 \
+  --num-envs-per-worker 1 \
+  --hours 7 \
+  --timesteps-total 20000000 \
+  --reward-scale 1.15 \
+  --living-reward 0.0 \
+  --checkpoint-freq 5
