@@ -1,1 +1,0 @@
-/storage/ice1/1/3/cxu371/drl-soccer-twos/ray_results/PPO_reward_smoke/PPO_Soccer_1fca2_00000_0_2026-04-22_23-04-22/checkpoint_000003/checkpoint-3
