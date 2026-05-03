@@ -74,3 +74,13 @@ Submission-2-only curve (`policy_reward_mean/default` vs steps):
 
 Plot generation script:
 - `scripts/plot_reward_curves.py`
+
+## Baseline Results (for Comparison in Report)
+Recovered baseline run artifacts are stored in:
+- `baseline_results/README.md`
+- `baseline_results/submission1_reward_timeseries.csv`
+- `baseline_results/reward_curve_submission1_baseline.svg`
+- `baseline_results/reward_curve_submission1_baseline.png`
+
+Baseline curve generation script:
+- `scripts/plot_submission1_baseline_curve.py`
